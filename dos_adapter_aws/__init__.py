@@ -28,8 +28,16 @@ def lambda_invoke(function, payload) -> str:
 
 
 # The tool registry + per-tool capability specs (capability = "tool:<name>").
-TOOLS = {"s3_put_object": s3_put_object, "ec2_stop_instance": ec2_stop_instance, "lambda_invoke": lambda_invoke}
-SPECS = {"s3_put_object": {"capability": "tool:s3_put_object"}, "ec2_stop_instance": {"capability": "tool:ec2_stop_instance"}, "lambda_invoke": {"capability": "tool:lambda_invoke"}}
+TOOLS = {
+    "s3_put_object": s3_put_object,
+    "ec2_stop_instance": ec2_stop_instance,
+    "lambda_invoke": lambda_invoke,
+}
+SPECS: dict[str, dict[str, Any]] = {
+    "s3_put_object": {"capability": "tool:s3_put_object"},
+    "ec2_stop_instance": {"capability": "tool:ec2_stop_instance"},
+    "lambda_invoke": {"capability": "tool:lambda_invoke"},
+}
 
 
 def governed_tools(governor: Any) -> dict[str, Any]:
