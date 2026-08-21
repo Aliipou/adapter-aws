@@ -1,5 +1,7 @@
 # adapter-aws
 
+**Live (graph):** [https://ali-adapter-aws.vercel.app](https://ali-adapter-aws.vercel.app)
+
 Decision OS / AuthGate **execution adapter** for AWS. It exposes AWS actions as
 **governed tools**: each tool is the effect *behind* a Policy Enforcement Point
 and runs only when the `decision-os-min` kernel authorizes the action. The
